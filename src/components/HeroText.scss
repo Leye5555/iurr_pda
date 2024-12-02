@@ -1,0 +1,50 @@
+.hero-text {
+  line-height: 0;
+  @media (max-width: 768px) {
+    bottom: 50px;
+  }
+  & span:first-child {
+    font-weight: bold;
+    font-size: clamp(28px, 8vw + 1rem, 150px);
+    line-height: 1.5;
+  }
+  & span:last-child {
+    font-size: clamp(32px, 14vw + 0.5rem, 400px);
+    text-wrap: wrap;
+    white-space: wrap;
+    font-weight: 900;
+    line-height: 1;
+    @media (max-width: 768px) {
+      bottom: 40px;
+    }
+    @media (max-width: 576px) {
+      font-size: clamp(32px, 10vw + 1rem, 100px);
+    }
+  }
+}
+
+.show-stroke {
+  width: min(20vw, 248px);
+  height: 53px;
+
+  bottom: 0;
+
+  @media (max-width: 1024px) {
+    bottom: -20px;
+  }
+
+  & path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 400;
+    animation: stroke 2s ease-in-out forwards;
+  }
+}
+
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: -385px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,36 @@
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.542);
+    z-index: 2;
+  }
+}
+.main-bg {
+  position: absolute;
+  width: unset !important;
+  height: unset !important;
+  inset: 0;
+  video {
+    object-fit: cover;
+  }
+}
+
+.btn-animation {
+  --x: 100px;
+  --y: 30px;
+  background-image: radial-gradient(
+    circle at var(--x) var(--y),
+    rgb(13, 135, 165) 10px,
+    rgb(65, 5, 114) 15px,
+    rgba(255, 255, 255, 0.589) 20px
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

@@ -1,0 +1,14 @@
+.carousel-controls {
+  @media (max-width: 768px) {
+    right: unset;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: -35px;
+    z-index: 99;
+    height: max-content;
+
+    rotate: 90deg;
+    margin: auto;
+  }
+}
