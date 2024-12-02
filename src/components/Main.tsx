@@ -6,6 +6,7 @@ import ReactPlayer from "react-player";
 import "./Main.scss";
 import React, { useContext } from "react";
 import { GlobalContext } from "../context";
+import { useNavigate } from "react-router-dom";
 
 type CustomStyles = {
   "--x": string;
@@ -17,7 +18,7 @@ const Main = () => {
     state: { activeBg },
     dispatch,
   } = useContext(GlobalContext);
-
+  const navigate = useNavigate();
   const bgs = [backgroundLg1, backgroundLg2, backgroundLg3];
   const [x, setX] = React.useState(0);
   const [y, setY] = React.useState(0);
@@ -75,6 +76,7 @@ const Main = () => {
           style={styles}
           onMouseMove={mouseMove}
           className="btn-animation  w-max h-max text-[32px]"
+          onClick={() => navigate("/accept-invitation")}
         >
           Accept
         </button>
