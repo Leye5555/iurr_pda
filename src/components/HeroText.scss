@@ -3,12 +3,12 @@
   @media (max-width: 768px) {
     bottom: 50px;
   }
-  & span:first-child {
+  & h3:first-child {
     font-weight: bold;
     font-size: clamp(28px, 8vw + 1rem, 150px);
     line-height: 1.5;
   }
-  & span:last-child {
+  & h1:last-child {
     font-size: clamp(32px, 14vw + 0.5rem, 400px);
     text-wrap: wrap;
     white-space: wrap;
@@ -46,5 +46,30 @@
   }
   100% {
     stroke-dashoffset: 0;
+  }
+}
+
+.text-animation-2 {
+  --x: 100px;
+  --y: 30px;
+  background-image: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(0, 31, 62, 0.351) 0,
+    rgba(4, 0, 23, 0.91) 20%,
+    #0e2648 60px,
+    transparent
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  @media (max-width: 768px) {
+    background-image: radial-gradient(
+      circle at var(--x) var(--y),
+      rgba(0, 31, 62, 0.846) 0,
+      rgba(4, 0, 23, 0.91) 20%,
+      #0e2648 60px,
+      transparent
+    );
   }
 }

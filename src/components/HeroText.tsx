@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./HeroText.scss";
 import React from "react";
+import { CustomStyles } from "./Main";
 
 const HeroText = () => {
   const { name } = useParams();
@@ -9,11 +10,46 @@ const HeroText = () => {
   console.log(formattedName);
   //   formattedName = formattedName?.replace(/.\s+/g, "")
 
+  const [x, setX] = React.useState(0);
+  const [y, setY] = React.useState(0);
+  const [x2, setX2] = React.useState(0);
+  const [y2, setY2] = React.useState(0);
+  const styles: CustomStyles = {
+    "--x": `${x}px`,
+    "--y": `${y}px`,
+  };
+  const styles2: CustomStyles = {
+    "--x": `${x2}px`,
+    "--y": `${y2}px`,
+  };
+  const mouseMove =
+    (text: string = "text") =>
+    (event: React.MouseEvent<HTMLButtonElement | HTMLElement, MouseEvent>) => {
+      if (typeof window === "undefined") return;
+      event.preventDefault();
+      console.log(
+        event.nativeEvent.offsetX,
+        event.nativeEvent.offsetY,
+        event.nativeEvent
+      );
+      if (text === "text") {
+        setX(event.nativeEvent.offsetX);
+        setY(event.nativeEvent.offsetY);
+      } else if (text === "text2") {
+        setX2(event.nativeEvent.offsetX);
+        setY2(event.nativeEvent.offsetY);
+      }
+    };
+
   return (
     <div className="">
-      <h1 className="hero-text capitalize text-[200px] z-10 absolute bottom-0 px-4 sm:px-10  text-ellipsis w-full whitespace-nowrap line-clamp-2 h-max">
-        <span className="relative w-max h-max">
-          <span className="leading-none">
+      <div className="hero-text capitalize text-[200px] z-10 absolute bottom-0 px-4 sm:px-10  text-ellipsis w-full whitespace-nowrap line-clamp-2 h-max">
+        <h3 className="relative w-max h-max ">
+          <span
+            style={styles}
+            className="leading-none text-animation-2"
+            onMouseMove={mouseMove("text")}
+          >
             {" "}
             {formattedName ? formattedName.split(" ")[0] : ""}
           </span>
@@ -34,14 +70,16 @@ const HeroText = () => {
               strokeLinecap="round"
             />
           </svg>
-        </span>
-
-        <br />
-        <span className="leading-none">
+        </h3>
+        <h1
+          style={styles2}
+          onMouseMove={mouseMove("text2")}
+          className="leading-none text-animation-2"
+        >
           {" "}
           {formattedName ? formattedName.split(" ")[1] : "Everyone"}
-        </span>
-      </h1>
+        </h1>
+      </div>
     </div>
   );
 };

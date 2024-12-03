@@ -34,3 +34,17 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.text-animation {
+  --x: 100px;
+  --y: 30px;
+  background-image: radial-gradient(
+    circle at var(--x) var(--y),
+    rgb(0, 31, 62) 0,
+    rgb(34, 0, 35) 50px,
+    #0e264874 60px
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
