@@ -32,7 +32,7 @@ export default function SignUpFrom() {
 
 return (
   <div className="accept">
-    <img className="image" src="src\assets\glass-cup-with-water-pink-flower-blue.jpg" alt="" />
+    <img className="image" src="" alt="" />
     <Form {...form}>
   
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 test">
