@@ -1,49 +1,135 @@
 .accept {
-  // background-color: rgb(200, 200, 247);
-  background: linear-gradient(to bottom, #1176ea 20%, #1575e3e3 50%);
-  height: 100vh;
-  width: 100%;
-  display: flex;
+    // background-color: rgb(200, 200, 247);
+    background: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
 }
 
 form {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  padding-inline: 40px;
-  align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding-inline: 40px;
+    align-items: flex-start;
 
-  @media (max-width: 768px) {
-    padding-inline: 16px;
-  }
+    @media (max-width: 768px) {
+        padding-inline: 16px;
+    }
 }
 
 form input {
-  width: 200px;
-  margin: auto;
-}
-.btn {
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 10px;
-}
-.image {
-  width: 50%;
-  object-fit: cover;
-  height: 100%;
+    border: 1px solid #D9D9D9;
 }
 
-@media (max-width: 451px) {
-  .image {
-    display: none;
-  }
-  .test {
-    width: 100%;
+.btn {
+
+    border: none;
+    padding: 11px 120px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #5864CF 0%, #33A9FF 58.5%, #870E92 100%);
+
+}
+
+.hero-text {
+    padding: 24px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
     align-items: flex-start;
-  }
+}
+
+.image {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 100px;
+
+}
+
+@media (max-width: 768px) {
+    .image {
+        display: none;
+    }
+
+    .test {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .accept {
+        margin: auto;
+    }
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.image {
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+}
+
+.mobile-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    .svg-1 {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .svg-2 {
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    .svg-3 {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+    }
+
+    .svg-4 {
+        left: 0;
+        bottom: 190px;
+        position: absolute;
+    }
+
+    .svg-5 {
+        right: 0;
+        bottom: 99px;
+        position: absolute;
+    }
+
 }
