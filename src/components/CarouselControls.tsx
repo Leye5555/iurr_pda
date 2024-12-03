@@ -31,7 +31,8 @@ const CarouselControls = ({ position }: CarouselControlsProps) => {
       const timeDelta = (timeLapsed - prevTimeLapsed) / (duration * 1000);
       ctx.clearRect(0, 0, 40, 40);
       ctx.beginPath();
-      ctx.strokeStyle = "#031756";
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#0d3a78";
       ctx.arc(20, 20, 18, 0, Math.PI * 2 * timeDelta);
       ctx.stroke();
 
